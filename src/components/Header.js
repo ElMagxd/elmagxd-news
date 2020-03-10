@@ -15,7 +15,7 @@ const Header = () => {
                <Col md={8}>
                   <nav>
                      <ul>
-                        <li><NavLink to='/'>Home</NavLink></li>
+                        <li><NavLink exact to='/'>Home</NavLink></li>
                         <li><NavLink to='/news'>News</NavLink></li>
                         <li><NavLink to='/contacts'>Contacts</NavLink></li>
                      </ul>
