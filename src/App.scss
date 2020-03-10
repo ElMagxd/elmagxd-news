@@ -224,3 +224,90 @@ h1 {
 	}
 }
 
+.contacts {
+	&-content {
+		&__tel {
+			font-size: 5.5rem;
+			color: $accent;
+			margin-bottom: 45px;
+			display: block;
+
+			&:hover {
+				text-decoration: none;
+				color: $accent;
+				opacity: .8;
+			}
+		}
+
+		&__name {
+			font-size: 2.5rem;
+			color: $main;
+			display: block;
+			padding: 2px 0 2px 25px;
+			position: relative;
+			display: block;
+			transition: all .3s ease;
+			max-width: 325px;
+
+			&:before {
+				content: '';
+				display: block;
+				width: 2px;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				background-color: $accent;
+				transition: all .3s ease;
+				z-index: -1;
+			}
+
+			&:hover {
+				color: #fff;
+
+				&:before {
+					width: 100%;
+				}
+			}
+		}
+
+		&__mail {
+			font-size: 2rem;
+			color: $main;
+			display: block;
+			margin-top: 25px;
+			margin-bottom: 50px;
+
+			&:hover {
+				color: $main;
+				opacity: .8;
+				text-decoration: none;
+			}
+		}
+
+		&__position {
+			font-size: 2rem;
+			color: $main;
+			opacity: .5;
+			margin-bottom: 25px;
+		}
+
+		&__stack {
+			font-size: 2rem;
+			color: $main;
+
+			span {
+				color: $accent;
+			}
+		}
+	}
+
+	&-photo {
+		display: block;
+		max-width: 100%;
+		width: 100%;
+		max-height: 420px;
+		object-fit: cover;
+	}
+}
