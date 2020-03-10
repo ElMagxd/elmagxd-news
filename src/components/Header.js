@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
    return (
@@ -15,9 +15,9 @@ const Header = () => {
                <Col md={8}>
                   <nav>
                      <ul>
-                        <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/news'>News</Link></li>
-                        <li><Link to='/contacts'>Contacts</Link></li>
+                        <li><NavLink to='/'>Home</NavLink></li>
+                        <li><NavLink to='/news'>News</NavLink></li>
+                        <li><NavLink to='/contacts'>Contacts</NavLink></li>
                      </ul>
                   </nav>
                </Col>

@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 import News from '../pages/News';
 import Contacts from '../pages/Contacts';
+import ErrorPage from '../pages/ErrorPage';
 import axios from 'axios';
 
 const useFetch = () => {
@@ -26,15 +27,18 @@ const Main = () => {
       <main className="main">
          <Switch>
             <Route
-               path='/'
-               exact
-               render={() => result && <Home data={result.articles}/>}
-            />
-            <Route
                path='/news' 
                render={() => result && <News data={result.articles}/>}
             />
             <Route exact path='/contacts' component={Contacts}/>
+            <Route
+               path='/'
+               exact
+               render={() => result && <Home data={result.articles}/>}
+            />
+            <Route path='*'>
+               <ErrorPage/>
+            </Route>
          </Switch>
       </main>
    );
