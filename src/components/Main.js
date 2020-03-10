@@ -16,7 +16,7 @@ const useFetch = () => {
          updateData(response.data);
       }
       fetchData();
-   }, []);
+   }, [requestUrl]);
    return data;
 }
 

@@ -4,7 +4,6 @@ import NewsAll from './NewsAll';
 import NewsSingle from './NewsSingle';
 
 const News = props => {
-   console.log(props);
    return (
       <Switch>
          <Route
