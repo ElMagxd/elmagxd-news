@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 import News from '../pages/News';
@@ -31,13 +31,17 @@ const Main = () => {
          <Switch>
             <Route
                path='/news' 
-               render={() => result && <News data={result.articles}/>}
+               render={() => result && <News/>}
             />
-            <Route exact path='/contacts' component={Contacts}/>
+            <Route
+               exact
+               path='/contacts'
+               component={Contacts}
+            />
             <Route
                path='/'
                exact
-               render={() => result && <Home data={result.articles}/>}
+               render={() => result && <Home/>}
             />
             <Route path='*'>
                <ErrorPage/>

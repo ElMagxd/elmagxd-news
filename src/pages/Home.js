@@ -1,9 +1,10 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import NewsItem from '../components/NewsItem';
+import { useSelector } from 'react-redux';
 
-const Home = props => {
-   const articles = props.data;
+const Home = () => {
+   const articles = useSelector(state => state.data.articles);
    return (
       <section className="home">
          <Container>

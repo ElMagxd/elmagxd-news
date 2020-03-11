@@ -3,13 +3,13 @@ import { Switch, Route } from 'react-router-dom';
 import NewsAll from './NewsAll';
 import NewsSingle from './NewsSingle';
 
-const News = props => {
+const News = () => {
    return (
       <Switch>
          <Route
             exact
             path='/news'
-            render={() => <NewsAll data={props.data}/>}
+            component={NewsAll}
          />
          <Route
             path='/news/:number'
