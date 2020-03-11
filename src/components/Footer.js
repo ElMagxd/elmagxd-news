@@ -7,7 +7,7 @@ const Footer = () => {
       <footer className="footer">
          <Container>
             <Row className="align-items-center">
-               <Col md={4}>
+               <Col sm={6}>
                   <div className="logo-wrapper">
                      <Link to='/' className="logo">
                         ELMG News
@@ -17,10 +17,7 @@ const Footer = () => {
                      </span>
                   </div>
                </Col>
-               <Col md={4}>
-
-               </Col>
-               <Col md={4}>
+               <Col sm={6}>
                   <div className="madeby">
                      <span className="madeby__head">
                         Made by

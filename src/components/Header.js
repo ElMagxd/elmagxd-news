@@ -7,15 +7,15 @@ const Header = () => {
       <header className="header">
          <Container>
             <Row className="align-items-center">
-               <Col md={4}>
+               <Col xs={6} sm={4}>
                   <Link to='/' className="logo">
                      ELMG News
                   </Link>
                </Col>
-               <Col md={8}>
+               <Col xs={6} sm={8}>
                   <nav>
                      <ul>
-                        <li><NavLink exact to='/'>Home</NavLink></li>
+                        <li className="d-none d-sm-block"><NavLink exact to='/'>Home</NavLink></li>
                         <li><NavLink to='/news'>News</NavLink></li>
                         <li><NavLink to='/contacts'>Contacts</NavLink></li>
                      </ul>

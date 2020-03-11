@@ -7,7 +7,7 @@ const Contacts = () => {
       <section className="contacts">
          <Container>
             <Row>
-               <Col lg={6}>
+               <Col xl={6}>
                   <div className="contacts-content">
                      <a
                         className="contacts-content__tel"
@@ -32,7 +32,7 @@ const Contacts = () => {
                      </p>
                   </div>
                </Col>
-               <Col lg={6}>
+               <Col xl={6} className='d-none d-xl-block'>
                   <img
                      src={photo}
                      alt="My face ;)"

@@ -13,7 +13,7 @@ const NewsSingle = props => {
       <section className="singleNews">
          <Container>
             <Row>
-               <Col lg={5}>
+               <Col xl={5}>
                   <h2 className="singleNews-title">
                      {article.title}
                   </h2>
@@ -25,7 +25,7 @@ const NewsSingle = props => {
                      <span> / {date.getMonth() +1}</span>
                   </div>
                </Col>
-               <Col lg={7}>
+               <Col xl={7}>
                   <img
                      src={article.urlToImage}
                      alt={article.title}

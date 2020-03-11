@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const NewsItem = ({article, number}) => {
    const date = new Date(article.publishedAt);
    return (
-      <Col lg={4}>
+      <Col md={6} xl={4}>
          <div className="newsItem">
             <Link
                to={{

@@ -327,3 +327,57 @@ h1 {
 		margin-bottom: 80px;
 	}
 }
+
+// Media querries
+
+@media (max-width: 1199.98px) {
+	.singleNews {
+		&-source {
+			display: inline-block;
+			width: 50%;
+		}
+
+		.newsItem__date {
+			display: inline-block;
+			width: 50%;
+			text-align: right;
+		}
+	}
+}
+
+@media (max-width: 575.98px) { 
+	html {
+		font-size: 9px;
+	}
+
+	.header {
+		ul {
+			li {
+
+				&:not(:last-child) {
+					margin-right: 20px;
+				}
+			}
+		}
+	}
+
+	.footer {
+		.madeby {
+			align-items: flex-start;
+			margin-top: 20px;
+
+			&__name {
+				order: -1;
+			}
+		}
+	}
+
+	.contacts {
+		&-content {
+			&__tel {
+				font-size: 3.4rem;
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
