@@ -5,7 +5,6 @@ import { Redirect } from 'react-router-dom';
 const NewsSingle = props => {
    const article = props.location.state;
    if (!article) {
-      console.log(article, 'Article is none');
       return <Redirect to='/'/>
    }
    const date = new Date(article.publishedAt);
