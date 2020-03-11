@@ -5,20 +5,23 @@ import News from '../pages/News';
 import Contacts from '../pages/Contacts';
 import ErrorPage from '../pages/ErrorPage';
 import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
+import { updateReduxData } from '../actions';
 
 const useFetch = () => {
-   const [data, updateData] = useState(null);
+   const dispatch = useDispatch();
    const requestUrl = 'http://newsapi.org/v2/top-headlines?' +
                       'country=ua&' +
                       'apiKey=63ecc0e3912242beafda834c6930d4a4';
    useEffect(() => {
       const fetchData = async () => {
          const response = await axios.get(requestUrl);
-         updateData(response.data);
+         dispatch(updateReduxData(response.data));
       }
       fetchData();
-   }, [requestUrl]);
-   return data;
+   }, [dispatch, requestUrl]);
+   const reduxData = useSelector(state => state.data);
+   return reduxData;
 }
 
 const Main = () => {
