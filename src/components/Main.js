@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import axios from 'axios';
+import { updateReduxData } from '../redux/actions';
+import Preloader from './Preloader';
 import Home from '../pages/Home';
 import News from '../pages/News';
 import Contacts from '../pages/Contacts';
 import ErrorPage from '../pages/ErrorPage';
-import axios from 'axios';
-import { useSelector, useDispatch } from 'react-redux';
-import { updateReduxData } from '../actions';
-import Preloader from './Preloader';
 
 const Main = () => {
    const [isLoading, setLoading] = useState(true);
