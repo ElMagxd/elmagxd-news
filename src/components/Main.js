@@ -14,15 +14,19 @@ const Main = () => {
 
    const useFetch = () => {
       const dispatch = useDispatch();
-      const requestUrl = 'http://newsapi.org/v2/top-headlines?' +
-                         'country=ua&' +
-                         'apiKey=63ecc0e3912242beafda834c6930d4a4';
+      const requestUrl = 'https://newsapi.org/v2/top-headlines?' +
+         'country=ua&' +
+         `apiKey=${process.env.REACT_APP_NEWS_API_KEY}`;
       useEffect(() => {
          const fetchData = async () => {
             setLoading('true');
-            const response = await axios.get(requestUrl);
+            const response = await axios.get(requestUrl, {
+               headers: {
+                  "X-Api-Key": process.env.REACT_APP_NEWS_API_KEY,
+               }
+            });
             dispatch(updateReduxData(response.data));
-            if (response.status >= 200 && response.status < 300) {setLoading(false);}
+            if (response.status >= 200 && response.status < 300) { setLoading(false); }
          }
          fetchData();
       }, [dispatch, requestUrl]);
@@ -32,14 +36,14 @@ const Main = () => {
 
    const result = useFetch();
 
-   if (isLoading) {return <Preloader/>}
+   if (isLoading) { return <Preloader /> }
 
    return (
       <main className="main">
          <Switch>
             <Route
-               path='/news' 
-               render={() => result && <News/>}
+               path='/news'
+               render={() => result && <News />}
             />
             <Route
                exact
@@ -49,10 +53,10 @@ const Main = () => {
             <Route
                path='/'
                exact
-               render={() => result && <Home/>}
+               render={() => result && <Home />}
             />
             <Route path='*'>
-               <ErrorPage/>
+               <ErrorPage />
             </Route>
          </Switch>
       </main>

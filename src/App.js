@@ -9,9 +9,9 @@ import './App.scss';
 function App() {
 	return (
 		<div className="App">
-			<Header/>
-			<Main/>
-			<Footer/>
+			<Header />
+			<Main />
+			<Footer />
 		</div>
 	);
 }
