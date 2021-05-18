@@ -12,19 +12,17 @@ import ErrorPage from '../pages/ErrorPage';
 const Main = () => {
    const [isLoading, setLoading] = useState(true);
 
+   const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+
    const useFetch = () => {
       const dispatch = useDispatch();
-      const requestUrl = 'https://newsapi.org/v2/top-headlines?' +
+      const requestUrl = `${proxyUrl}https://newsapi.org/v2/top-headlines?` +
          'country=ua&' +
          `apiKey=${process.env.REACT_APP_NEWS_API_KEY}`;
       useEffect(() => {
          const fetchData = async () => {
             setLoading('true');
-            const response = await axios.get(requestUrl, {
-               headers: {
-                  "X-Api-Key": process.env.REACT_APP_NEWS_API_KEY,
-               }
-            });
+            const response = await axios.get(requestUrl);
             dispatch(updateReduxData(response.data));
             if (response.status >= 200 && response.status < 300) { setLoading(false); }
          }
