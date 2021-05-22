@@ -12,11 +12,11 @@ import ErrorPage from '../pages/ErrorPage';
 const Main = () => {
    const [isLoading, setLoading] = useState(true);
 
-   const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+   // const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 
    const useFetch = () => {
       const dispatch = useDispatch();
-      const requestUrl = `${proxyUrl}https://newsapi.org/v2/top-headlines?` +
+      const requestUrl = `https://newsapi.org/v2/top-headlines?` +
          'country=ua&' +
          `apiKey=${process.env.REACT_APP_NEWS_API_KEY}`;
       useEffect(() => {
